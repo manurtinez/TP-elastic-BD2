@@ -20,23 +20,22 @@ class PruebaelasticApplicationTests {
 	void contextLoads() {
 	}
 
-	// @Autowired
-	// @Qualifier("springDataJpaService")
-	// ArticleService articleService;
+	@Autowired
+	ArticleService articleService;
 
-	// protected ArticleService getService() {
-	// return articleService;
-	// }
+	protected ArticleService getService() {
+		return articleService;
+	}
 
-	// @BeforeEach
-	// public void setUp() {
-	// this.articleService = this.getService();
-	// }
+	@BeforeEach
+	public void setUp() {
+		this.articleService = this.getService();
+	}
 
-	// @Test
-	// public void testCreateArticle() {
-	// Article art = new Article("un articulo");
-	// assertNotNull(art.getId());
-	// }
+	@Test
+	public void testCreateArticle() {
+		Article art = articleService.addArticle();
+		assertNotNull(art.getId());
+	}
 
 }
