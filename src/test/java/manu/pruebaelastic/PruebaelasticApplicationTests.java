@@ -16,10 +16,6 @@ import manu.pruebaelastic.services.ArticleService;
 @SpringBootTest
 class PruebaelasticApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
 	@Autowired
 	ArticleService articleService;
 
