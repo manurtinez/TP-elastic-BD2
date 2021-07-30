@@ -1,14 +1,12 @@
 package manu.pruebaelastic;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import manu.pruebaelastic.model.Article;
 import manu.pruebaelastic.services.ArticleService;
@@ -30,8 +28,11 @@ class PruebaelasticApplicationTests {
 
 	@Test
 	public void testCreateArticle() {
-		Article art = articleService.addArticle();
-		assertNotNull(art.getId());
+		Article art = new Article("an article");
+		Article newArt = articleService.addArticle(art);
+		assertNotNull(newArt.getId());
+		assertEquals("an article", newArt.getTitle());
+		;
 	}
 
 }

@@ -3,7 +3,7 @@ package manu.pruebaelastic.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "blog")
+@Document(indexName = "article")
 public class Article {
 
   @Id
@@ -14,8 +14,13 @@ public class Article {
   // @Field(type = FieldType.Nested, includeInParent = true)
   // private List<Author> authors;
 
+  // Default constructor
+  public Article() {
+  }
+
   // Constructor
-  public Article(String string) {
+  public Article(String aTitle) {
+    this.title = aTitle;
   }
 
   // getters and setters
