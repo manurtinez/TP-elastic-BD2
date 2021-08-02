@@ -1,8 +1,9 @@
-package manu.pruebaelastic.services;
+package manu.pruebaelastic.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import manu.pruebaelastic.services.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,6 @@ public class ArticleServiceImpl implements ArticleService {
     // authorsList.add(new Author("manuelito"));
     // authorsList.add(new Author("manuelito2"));
     // article.setAuthors(authorsList);
-    Article newArt = articleRepository.save(article);
-    return newArt;
+    return articleRepository.save(article);
   }
 }

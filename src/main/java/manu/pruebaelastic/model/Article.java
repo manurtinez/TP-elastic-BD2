@@ -2,6 +2,10 @@ package manu.pruebaelastic.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
+import java.util.List;
 
 @Document(indexName = "article")
 public class Article {
@@ -11,8 +15,8 @@ public class Article {
 
   private String title;
 
-  // @Field(type = FieldType.Nested, includeInParent = true)
-  // private List<Author> authors;
+   @Field(type = FieldType.Nested)
+   private Author author;
 
   // Default constructor
   public Article() {
@@ -40,11 +44,12 @@ public class Article {
     this.title = title;
   }
 
-  // public List<Author> getAuthors() {
-  // return this.authors;
-  // }
+  public Author getAuthor() {
+    return this.author;
+  }
 
-  // public void setAuthors(List<Author> authors) {
-  // this.authors = authors;
-  // }
+  public void setAuthor(Author author) {
+    this.author = author;
+    // author.addArticle(this); // Tengo mis dudas con estop
+  }
 }
