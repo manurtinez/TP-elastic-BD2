@@ -28,7 +28,7 @@ public class ArticleController {
     try {
       Author author = authorRepository.findById(authid).get();
       System.out.println(author);
-      author.addArticle(article);
+//      author.addArticle(article);
       authorRepository.save(author);
       return this.articleService.addArticle(article);
     } catch (Exception e) {

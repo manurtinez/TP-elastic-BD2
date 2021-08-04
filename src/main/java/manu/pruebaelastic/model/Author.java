@@ -16,8 +16,8 @@ public class Author {
 
   private String name;
 
-  @Field(type = FieldType.Nested)
-  private List<Article> articles;
+//  @Field(type = FieldType.Nested)
+//  private List<Article> articles;
 
   // Default constructor
   public Author() {
@@ -26,7 +26,7 @@ public class Author {
   // Constructor
   public Author(String aName) {
     this.name = aName;
-    this.articles = new ArrayList<>();
+//    this.articles = new ArrayList<>();
   }
 
   // Getters & Setters
@@ -46,15 +46,15 @@ public class Author {
     this.name = name;
   }
 
-  public List<Article> getArticles() {
-    return this.articles;
-  }
-
-  public void setArticles(List<Article> articles) {
-    this.articles = articles;
-  }
-
-  public void addArticle(Article article) {
-    this.articles.add(article);
-  }
+//  public List<Article> getArticles() {
+//    return this.articles;
+//  }
+//
+//  public void setArticles(List<Article> articles) {
+//    this.articles = articles;
+//  }
+//
+//  public void addArticle(Article article) {
+//    this.articles.add(article);
+//  }
 }
