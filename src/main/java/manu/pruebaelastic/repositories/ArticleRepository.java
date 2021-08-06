@@ -10,6 +10,8 @@ import manu.pruebaelastic.model.Article;
 @Repository
 public interface ArticleRepository extends ElasticsearchRepository<Article, String> {
 
+  List<Article> findAll();
+
   List<Article> findByTitle(String name);
 
   // @Query("{\"bool\": {\"must\": [{\"match\": {\"authors.name\": \"?0\"}}]}}")

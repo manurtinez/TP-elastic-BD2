@@ -5,8 +5,6 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
-import java.util.List;
-
 @Document(indexName = "article")
 public class Article {
 
@@ -15,8 +13,8 @@ public class Article {
 
   private String title;
 
-   @Field(type = FieldType.Nested)
-   private Author author;
+  @Field(type = FieldType.Nested)
+  private Author author;
 
   // Default constructor
   public Article() {
