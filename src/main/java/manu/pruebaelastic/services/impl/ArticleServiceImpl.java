@@ -20,11 +20,6 @@ public class ArticleServiceImpl implements ArticleService {
   }
 
   public Article addArticle(Article article) {
-    // Article article2 = new Article("an article");
-    // List<Author> authorsList = new ArrayList<Author>();
-    // authorsList.add(new Author("manuelito"));
-    // authorsList.add(new Author("manuelito2"));
-    // article.setAuthors(authorsList);
     return articleRepository.save(article);
   }
 

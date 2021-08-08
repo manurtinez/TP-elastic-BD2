@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import manu.pruebaelastic.model.Article;
 import manu.pruebaelastic.model.Author;
 import manu.pruebaelastic.repositories.AuthorRepository;
 import manu.pruebaelastic.services.AuthorService;
