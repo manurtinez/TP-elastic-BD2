@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import manu.pruebaelastic.model.Purchase;
 import manu.pruebaelastic.model.User;
 import manu.pruebaelastic.repositories.UserRepository;
 import manu.pruebaelastic.services.UserService;
@@ -38,7 +39,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(String id) {
+        System.out.println(id);
         return userRepository.findById(id).get();
+    }
+
+    @Override
+    public void addPurchaseToUser(User user, Purchase pur) {
+        user.addPurchase(pur);
+        userRepository.save(user);
     }
 
 }

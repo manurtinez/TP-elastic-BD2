@@ -2,6 +2,7 @@ package manu.pruebaelastic.services;
 
 import java.util.List;
 
+import manu.pruebaelastic.model.Purchase;
 import manu.pruebaelastic.model.User;
 
 public interface UserService {
@@ -10,6 +11,8 @@ public interface UserService {
     User findById(String id);
 
     User addUser(User user);
+
+    void addPurchaseToUser(User user, Purchase pur);
 
     // void addArticleToUser(String id, Article article);
 }

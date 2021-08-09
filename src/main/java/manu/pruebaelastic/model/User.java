@@ -1,9 +1,13 @@
 package manu.pruebaelastic.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 /**
  * Clase que representa usuarios de la plataforma
@@ -35,15 +39,14 @@ public class User {
   /**
    * Fecha de nacimiento del usuario
    */
+  @Field(type = FieldType.Date, format = {}, pattern = "uuuu-MM-dd'T'HH:mm:ssz")
   private Date dayOfBirth;
 
   /**
    * Constructor vacio necesario
    */
 
-  // @OneToMany(fetch = FetchType.LAZY, mappedBy = "client", cascade =
-  // CascadeType.ALL)
-  // private Set<Purchase> purchases = new HashSet<Purchase>();
+  private List<Purchase> purchases = new ArrayList<Purchase>();
 
   public User() {
   }
@@ -99,7 +102,11 @@ public class User {
     this.dayOfBirth = birthDate;
   }
 
-  // public Set<Purchase> purchases() {
-  // return purchases;
-  // }
+  public void addPurchase(Purchase pur) {
+    this.purchases.add(pur);
+  }
+
+  public List<Purchase> getPurchases() {
+    return purchases;
+  }
 }
