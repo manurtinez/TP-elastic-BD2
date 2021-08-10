@@ -4,6 +4,8 @@ import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Document(indexName = "purchaseindex")
 public class Purchase {
@@ -29,6 +31,7 @@ public class Purchase {
 
   private Float coordY;
 
+  @Field(type = FieldType.Date, format = {}, pattern = "uuuu-MM-dd'T'HH:mm:ssz")
   private Date dateOfPurchase;
 
   public Purchase() {
