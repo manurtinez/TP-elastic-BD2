@@ -1,4 +1,4 @@
-## En este readme se especifica el proseso de desarrollo que fuimos llevando para construir la app.
+## En este readme se especifica el proceso de desarrollo que fuimos llevando para construir la app.
 
 El primer paso de todos fue descargar una aplicacion starter de la pagina initialize de spring boot, a forma de tener un punto de partida, con las dependencias ya agregadas (solo necesitamos la de spring data y elasticsearch). Procedimos a levantar el proyecto para ver que minimamente corriera.
 
