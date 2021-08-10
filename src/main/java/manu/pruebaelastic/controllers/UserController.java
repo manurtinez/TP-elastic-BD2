@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import manu.pruebaelastic.model.Purchase;
 import manu.pruebaelastic.model.User;
+import manu.pruebaelastic.services.PurchaseService;
 import manu.pruebaelastic.services.UserService;
 
 @RestController
@@ -21,8 +22,11 @@ public class UserController {
 
     private final UserService userService;
 
-    public UserController(UserService userService) {
+    private final PurchaseService purchaseService;
+
+    public UserController(UserService userService, PurchaseService purchaseService) {
         this.userService = userService;
+        this.purchaseService = purchaseService;
     }
 
     @ResponseStatus(HttpStatus.OK)
@@ -40,9 +44,11 @@ public class UserController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     @PostMapping("/{userid}/purchases")
     public void addPurchase(@PathVariable String userid, @RequestBody Purchase purchase) {
+        // Creo la purchase en la db
+        Purchase createdPurchase = purchaseService.addPurchase(purchase);
+
         // Agrego el purchase al array del user
         User user = userService.findById(userid);
-
-        userService.addPurchaseToUser(user, purchase);
+        userService.addPurchaseToUser(user, createdPurchase);
     }
 }

@@ -1,5 +1,7 @@
 package manu.pruebaelastic.services;
 
-public interface PurchaseService {
+import manu.pruebaelastic.model.Purchase;
 
+public interface PurchaseService {
+  Purchase addPurchase(Purchase pur);
 }
