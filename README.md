@@ -1,4 +1,4 @@
-## En este readme se especifica el proceso de desarrollo que fuimos llevando para construir la app.
+## En este readme se especifica el proceso de desarrollo que fuimos llevando para construir la app y las dificultades encontradas.
 
 El primer paso de todos fue descargar una aplicacion starter de la pagina initialize de spring boot, a forma de tener un punto de partida, con las dependencias ya agregadas (solo necesitamos la de spring data y elasticsearch). Procedimos a levantar el proyecto para ver que minimamente corriera.
 
@@ -10,7 +10,7 @@ Una vez levantado el ambiente de elastic en docker, la app es muy facil de confi
 
 Luego, probamos escribir un par de entidades muy simples, con sus respectivos controllers / services / repositories para probar hacer un CRUD de las mismas, y ver las diferencias entre elastic y las DB relacionales que veniamos manejando.
 
-Durante la 'migracion' de modelos a nuestro nuevo esquema, una de las dificultades con la que nos encontramos fué relacionado a la manipulación de datos tipo Date; Sobre la cual es necesario especificar un formato específico, cuestión que nos costó descifrar dado que si la BBDD queda con datos 'basura' de algun run, al querer configurar lo mencionado, saltan errores de tipos y resultan ser los datos que mencionamos ya se encontraban almacenados, aunque se detectaban al probar los controllers únicamente y esto hacía mas difícil hallar el error.
+Durante la 'migracion' de modelos a nuestro nuevo esquema, una de las dificultades con la que nos encontramos fué relacionado a la manipulación de datos tipo Date; Sobre la cual es necesario especificar un formato particular, cuestión que nos costó descifrar dado que si la BBDD queda con datos 'basura' de algun run, al querer configurar lo mencionado, saltan errores de tipos y resultan ser los datos que mencionamos ya se encontraban almacenados, aunque se detectaban al probar los controllers únicamente y esto hacía mas difícil hallar el error.
 
 Otra de las dificultades fué la representación de las relaciones entre modelos. En el proyecto original las relaciones se declaraban mas bien bidireccionalmente, pero en este caso, para ElasticSearch los declararemos desde un único lado (caso contrario podría generar un bucle infinito, terminando en error). 
 Respecto a lo mencionado, en el proyecto anterior, además representabamos estas relaciones normalmente con HashSets, mientras que ahora debemos declararles como ArrayLists.
