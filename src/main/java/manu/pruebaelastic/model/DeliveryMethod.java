@@ -6,7 +6,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 /**
  * Clase que representa un Método de envio.
  */
-@Document(indexName = "deliveryindex")
+@Document(indexName = "deliveryMethod")
 public class DeliveryMethod {
 
   /**
