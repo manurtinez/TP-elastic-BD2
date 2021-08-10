@@ -12,7 +12,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 /**
  * Clase que representa usuarios de la plataforma
  */
-@Document(indexName = "userindex")
+@Document(indexName = "user")
 public class User {
 
   /**
