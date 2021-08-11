@@ -1,5 +1,7 @@
 package manu.pruebaelastic.services.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,12 @@ public class PurchaseServiceImpl implements PurchaseService {
   }
 
   @Override
-  public Purchase addPurchase(Purchase pur) {
+  public List<Purchase> getAll() {
+    return purchaseRepository.findAll();
+  }
+
+  @Override
+  public Purchase createPurchase(Purchase pur) {
     return purchaseRepository.save(pur);
   }
 

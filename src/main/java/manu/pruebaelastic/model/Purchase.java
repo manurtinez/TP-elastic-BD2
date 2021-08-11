@@ -23,7 +23,7 @@ public class Purchase {
 
   // @ManyToOne(fetch = FetchType.LAZY)
   // @JoinColumn(name = "payment_method_id", nullable = false)
-  // private PaymentMethod paymentMethod;
+  private PaymentMethod paymentMethod;
 
   private String address;
 
@@ -39,13 +39,12 @@ public class Purchase {
 
   public Purchase(
       // ProductOnSale productOnSale,
-      int quantity, User client, DeliveryMethod deliveryMethod,
-      // PaymentMethod paymentMethod,
-      String address, Float coordX, Float coordY, Date dateOfPurchase) {
+      int quantity, User client, DeliveryMethod deliveryMethod, PaymentMethod paymentMethod, String address,
+      Float coordX, Float coordY, Date dateOfPurchase) {
     // this.productOnSale = productOnSale;
     this.quantity = quantity;
     this.deliveryMethod = deliveryMethod;
-    // this.paymentMethod = paymentMethod;
+    this.paymentMethod = paymentMethod;
     this.address = address;
     this.coordX = coordX;
     this.coordY = coordY;
@@ -82,13 +81,13 @@ public class Purchase {
     this.deliveryMethod = deliveryMethod;
   }
 
-  // public PaymentMethod getPaymentMethod() {
-  // return this.paymentMethod;
-  // }
+  public PaymentMethod getPaymentMethod() {
+    return this.paymentMethod;
+  }
 
-  // public void setPaymentMethod(PaymentMethod paymentMethod) {
-  // this.paymentMethod = paymentMethod;
-  // }
+  public void setPaymentMethod(PaymentMethod paymentMethod) {
+    this.paymentMethod = paymentMethod;
+  }
 
   public String getAddress() {
     return this.address;

@@ -1,7 +1,11 @@
 package manu.pruebaelastic.services;
 
+import java.util.List;
+
 import manu.pruebaelastic.model.Purchase;
 
 public interface PurchaseService {
-  Purchase addPurchase(Purchase pur);
+  List<Purchase> getAll();
+
+  Purchase createPurchase(Purchase pur);
 }
