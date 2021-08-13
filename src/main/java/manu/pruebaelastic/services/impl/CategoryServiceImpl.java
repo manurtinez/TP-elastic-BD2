@@ -37,10 +37,10 @@ public class CategoryServiceImpl implements CategoryService {
   }
 
   // !! Esto voy a ver si lo dejo
-  @Override
-  public void addProductToCategory(Category cat, Product prod) {
-    cat.addProduct(prod);
-    categoryRepository.save(cat);
-  }
+  // @Override
+  // public void addProductToCategory(Category cat, Product prod) {
+  // cat.addProduct(prod);
+  // categoryRepository.save(cat);
+  // }
 
 }

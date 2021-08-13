@@ -10,5 +10,6 @@ public interface CategoryService {
 
   Category createOrGetCategory(Category cat);
 
-  void addProductToCategory(Category cat, Product prod);
+  // ! Esto siguiente es sospechos0, no creo que funcione
+  // void addProductToCategory(Category cat, Product prod);
 }

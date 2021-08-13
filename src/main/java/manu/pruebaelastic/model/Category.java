@@ -40,7 +40,7 @@ public class Category {
 
   // @OneToMany(fetch = FetchType.LAZY, mappedBy = "category", cascade =
   // CascadeType.ALL)
-  private List<Product> products = new ArrayList<Product>();
+  // private List<Product> products = new ArrayList<Product>();
 
   public String getId() {
     return id;
@@ -54,15 +54,15 @@ public class Category {
     this.name = name;
   }
 
-  public List<Product> getProducts() {
-    return this.products;
-  }
+  // public List<Product> getProducts() {
+  // return this.products;
+  // }
 
-  public void setProducts(List<Product> products) {
-    this.products = products;
-  }
+  // public void setProducts(List<Product> products) {
+  // this.products = products;
+  // }
 
-  public void addProduct(Product prod) {
-    this.products.add(prod);
-  }
+  // public void addProduct(Product prod) {
+  // this.products.add(prod);
+  // }
 }
