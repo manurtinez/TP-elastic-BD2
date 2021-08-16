@@ -1,5 +1,8 @@
 package manu.pruebaelastic.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //import java.util.ArrayList;
 //import java.util.Date;
 //import java.util.List;
@@ -19,6 +22,7 @@ public class Provider {
 
 //  @OneToMany(fetch = FetchType.LAZY, mappedBy = "provider")
 //  private Set<ProductOnSale> productsOnSale = new HashSet<ProductOnSale>();
+  private List<ProductOnSale> productsonsale= new ArrayList<ProductOnSale>();
 
   private Long cuit;
 
@@ -75,5 +79,13 @@ public class Provider {
   public String getId() {
     return id;
   }
+  
+  public void addProductOnSale(ProductOnSale pos) {
+	    this.productsonsale.add(pos);
+	  }
+  
+  public List<ProductOnSale> getProductsOnSale() {
+	    return productsonsale;
+	  }
 
 }

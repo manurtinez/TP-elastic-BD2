@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import manu.pruebaelastic.model.Provider;
+import manu.pruebaelastic.model.ProductOnSale;
 import manu.pruebaelastic.repositories.ProviderRepository;
 import manu.pruebaelastic.services.ProviderService;
 
@@ -33,6 +34,12 @@ public class ProviderServiceImpl implements ProviderService {
     public Provider findById(String id) {
         //System.out.println(id);
         return providerRepository.findById(id).get();
+    }
+    
+    @Override
+    public void addProductOnSaleToProvider(Provider prov, ProductOnSale pos) {
+        prov.addProductOnSale(pos);
+        providerRepository.save(prov);
     }
 
 }
