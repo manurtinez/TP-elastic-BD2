@@ -14,3 +14,5 @@ Durante la 'migracion' de modelos a nuestro nuevo esquema, una de las dificultad
 
 Otra de las dificultades fué la representación de las relaciones entre modelos. En el proyecto original las relaciones se declaraban mas bien bidireccionalmente, pero en este caso, para ElasticSearch los declararemos desde un único lado (caso contrario podría generar un bucle infinito, terminando en error). 
 Respecto a lo mencionado, en el proyecto anterior, además representabamos estas relaciones normalmente con HashSets, mientras que ahora debemos declararles como ArrayLists.
+
+Por ultimo, otro cambio que tuvimos que hacer al modelo fue respecto a la join table "ProductOnSale", la cual llevaba la cuenta de que productos estaban a la venta, con foreign keys haciendo referencia al producto y provider correspondiente. Al no haber concepto de join tables ni foreign keys en elastic, decidimos prescindir de la referencia al product, y tener los ProductOnSale directamente representados como un array dentro de Provider. Teniendo en cuenta que la repeticion de datos no importa mucho en estos tipos de BDs, se puede guardar el objeto completo para luego hacer queries mucho mas rapidas.
