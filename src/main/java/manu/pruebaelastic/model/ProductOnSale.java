@@ -1,6 +1,8 @@
 package manu.pruebaelastic.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -9,11 +11,6 @@ import org.springframework.data.elasticsearch.annotations.Document;
  * Clase que representa el historial de cambios de precio para un determinado
  * producto
  */
-
-//@Entity
-//@Table(name = "product_on_sale")
-//@AssociationOverrides({ @AssociationOverride(name = "product", joinColumns = @JoinColumn(name = "PRODUCT_ID")),
-//    @AssociationOverride(name = "provider", joinColumns = @JoinColumn(name = "PROVIDER_ID")) })
 
 @Document(indexName = "productonsaleindex")
 public class ProductOnSale {
@@ -25,16 +22,7 @@ public class ProductOnSale {
    * Id de producto correspondiente
    */
   
-//  @ManyToOne(fetch = FetchType.LAZY)
-//  @JoinColumn(name = "product_id")
-//  private Product product;
-
-  /**
-   * Id de proveedor correspondiente
-   */
-//  @ManyToOne(fetch = FetchType.LAZY)
-//  @JoinColumn(name = "provider_id")
-//  private Provider provider;
+  private List<Product> products= new ArrayList<Product>();
 
   /**
    * Precio actual del producto
@@ -116,5 +104,13 @@ public class ProductOnSale {
   public void setFinalDate(Date finalDate) {
     this.finalDate = finalDate;
   }
+  
+  public void addProduct(Product prod) {
+	    this.products.add(prod);
+	  }
+
+public List<Product> getProducts() {
+	    return products;
+	  }
 
 }

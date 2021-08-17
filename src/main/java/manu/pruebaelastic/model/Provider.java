@@ -3,14 +3,8 @@ package manu.pruebaelastic.model;
 import java.util.ArrayList;
 import java.util.List;
 
-//import java.util.ArrayList;
-//import java.util.Date;
-//import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
-//import org.springframework.data.elasticsearch.annotations.Field;
-//import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Document(indexName = "providerindex")
 public class Provider {
@@ -20,8 +14,6 @@ public class Provider {
 
   private String name;
 
-//  @OneToMany(fetch = FetchType.LAZY, mappedBy = "provider")
-//  private Set<ProductOnSale> productsOnSale = new HashSet<ProductOnSale>();
   private List<ProductOnSale> productsonsale= new ArrayList<ProductOnSale>();
 
   private Long cuit;
@@ -52,13 +44,6 @@ public class Provider {
   public void setName(String name) {
     this.name = name;
   }
-
-//  public void addProduct(Product p) {
-//    // Aca iría la lógica para crear un ProductPrice con el precio y fecha del
-//    // producto
-//
-//    // this.products.add(p);
-//  }
 
 //  public void changeProductPrice(Product p, long newPrice) {
 //    // TODO

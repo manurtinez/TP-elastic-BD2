@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import manu.pruebaelastic.model.ProductOnSale;
+import manu.pruebaelastic.model.Product;
 import manu.pruebaelastic.repositories.ProductOnSaleRepository;
 import manu.pruebaelastic.services.ProductOnSaleService;
 
@@ -27,6 +28,15 @@ public class ProductOnSaleServiceImpl implements ProductOnSaleService {
 
     public List<ProductOnSale> findAll() {
         return productOnSaleRepository.findAll();
+    }
+    
+    public void addProductToProductOnSale(ProductOnSale pos, Product prod) {
+        pos.addProduct(prod);
+        productOnSaleRepository.save(pos);
+    }
+    
+    public ProductOnSale findById(String id) {
+        return productOnSaleRepository.findById(id).get();
     }
 
 }
