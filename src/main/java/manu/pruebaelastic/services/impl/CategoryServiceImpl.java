@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import manu.pruebaelastic.model.Category;
-import manu.pruebaelastic.model.Product;
 import manu.pruebaelastic.repositories.CategoryRepository;
 import manu.pruebaelastic.services.CategoryService;
 
@@ -35,12 +34,5 @@ public class CategoryServiceImpl implements CategoryService {
   public List<Category> findAll() {
     return categoryRepository.findAll();
   }
-
-  // !! Esto voy a ver si lo dejo
-  // @Override
-  // public void addProductToCategory(Category cat, Product prod) {
-  // cat.addProduct(prod);
-  // categoryRepository.save(cat);
-  // }
 
 }

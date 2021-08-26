@@ -34,9 +34,6 @@ public class ProductServiceImpl implements ProductService {
     // Si la categoria no existe, crearla y asignarla
     prod.setCategory(categoryService.createOrGetCategory(prod.getCategory()));
 
-    // Agregar producto al array de la category (??)
-    // categoryService.addProductToCategory(prod.getCategory(), prod);
-
     return productRepository.save(prod);
   }
 

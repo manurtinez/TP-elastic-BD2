@@ -13,16 +13,10 @@ public class Purchase {
   @Id
   private String id;
 
-  // @ManyToOne(fetch = FetchType.LAZY)
-  // @JoinColumn(name = "product_on_sale_id", nullable = false)
-  // private ProductOnSale productOnSale;
-
   private int quantity;
 
   private DeliveryMethod deliveryMethod;
 
-  // @ManyToOne(fetch = FetchType.LAZY)
-  // @JoinColumn(name = "payment_method_id", nullable = false)
   private PaymentMethod paymentMethod;
 
   private String address;
@@ -56,14 +50,6 @@ public class Purchase {
   public String getId() {
     return this.id;
   }
-
-  // public ProductOnSale getProductOnSale() {
-  // return this.productOnSale;
-  // }
-
-  // public void setProductOnSale(ProductOnSale productOnSale) {
-  // this.productOnSale = productOnSale;
-  // }
 
   public int getQuantity() {
     return this.quantity;
@@ -122,16 +108,5 @@ public class Purchase {
   }
 
   // * Fin getters and setters
-
-  /**
-   * Retorna el monto total a pagar, es decir: Cantidad de productos, por precio
-   * por producto, mas precio de envío
-   * 
-   * @return monto total
-   */
-  // public Float getAmount() {
-  // return (this.quantity * this.productOnSale.getPrice()) +
-  // this.deliveryMethod.getCost();
-  // }
 
 }

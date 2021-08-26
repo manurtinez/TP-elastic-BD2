@@ -30,13 +30,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
-    // @Override
-    // public void addArticleToUser(String id, Article article) {
-    // User user = userRepository.findById(id).get();
-    // user.addArticle(article);
-    // userRepository.save(user);
-    // }
-
     @Override
     public User findById(String id) {
         System.out.println(id);

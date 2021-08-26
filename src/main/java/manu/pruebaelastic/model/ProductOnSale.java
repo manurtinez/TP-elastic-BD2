@@ -21,8 +21,8 @@ public class ProductOnSale {
   /**
    * Id de producto correspondiente
    */
-  
-  private List<Product> products= new ArrayList<Product>();
+
+  private List<Product> products = new ArrayList<Product>();
 
   /**
    * Precio actual del producto
@@ -54,20 +54,9 @@ public class ProductOnSale {
    * @param initialDate Fecha para llevar el historial
    */
   public ProductOnSale(float price, Date initialDate) {
-    //product.addProductOnSale(this);
-    //this.product = product;
-    //this.provider = provider;
     this.setPrice(price);
     this.setInitialDate(initialDate);
   }
-
-//  public Product getProduct() {
-//    return this.product;
-//  }
-//
-//  public void setProduct(Product product) {
-//    this.product = product;
-//  }
 
   public float getPrice() {
     return this.price;
@@ -85,14 +74,6 @@ public class ProductOnSale {
     this.initialDate = initialDate;
   }
 
-//  public Provider getProvider() {
-//    return this.provider;
-//  }
-//
-//  public void setProvider(Provider provider) {
-//    this.provider = provider;
-//  }
-
   public String getId() {
     return this.id;
   }
@@ -104,13 +85,13 @@ public class ProductOnSale {
   public void setFinalDate(Date finalDate) {
     this.finalDate = finalDate;
   }
-  
-  public void addProduct(Product prod) {
-	    this.products.add(prod);
-	  }
 
-public List<Product> getProducts() {
-	    return products;
-	  }
+  public void addProduct(Product prod) {
+    this.products.add(prod);
+  }
+
+  public List<Product> getProducts() {
+    return products;
+  }
 
 }

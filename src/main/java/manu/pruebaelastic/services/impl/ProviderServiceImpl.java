@@ -32,10 +32,9 @@ public class ProviderServiceImpl implements ProviderService {
 
     @Override
     public Provider findById(String id) {
-        //System.out.println(id);
         return providerRepository.findById(id).get();
     }
-    
+
     @Override
     public void addProductOnSaleToProvider(Provider prov, ProductOnSale pos) {
         prov.addProductOnSale(pos);

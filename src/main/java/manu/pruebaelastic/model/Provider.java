@@ -14,7 +14,7 @@ public class Provider {
 
   private String name;
 
-  private List<ProductOnSale> productsonsale= new ArrayList<ProductOnSale>();
+  private List<ProductOnSale> productsonsale = new ArrayList<ProductOnSale>();
 
   private Long cuit;
 
@@ -45,14 +45,6 @@ public class Provider {
     this.name = name;
   }
 
-//  public void changeProductPrice(Product p, long newPrice) {
-//    // TODO
-//    // aca se cambiaria el precio de un producto en especifico, agregando un
-//    // nuevo ProductPrice?
-//    // int index = this.products.indexOf(p);
-//
-//  }
-
   public Long getCuit() {
     return cuit;
   }
@@ -64,13 +56,13 @@ public class Provider {
   public String getId() {
     return id;
   }
-  
+
   public void addProductOnSale(ProductOnSale pos) {
-	    this.productsonsale.add(pos);
-	  }
-  
+    this.productsonsale.add(pos);
+  }
+
   public List<ProductOnSale> getProductsOnSale() {
-	    return productsonsale;
-	  }
+    return productsonsale;
+  }
 
 }

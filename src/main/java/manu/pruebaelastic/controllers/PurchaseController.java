@@ -31,12 +31,6 @@ public class PurchaseController {
     return purchaseService.getAll();
   }
 
-  @ResponseStatus(HttpStatus.ACCEPTED)
-  @PostMapping
-  public Purchase createPurchase(@RequestBody Purchase purchase) {
-    return this.purchaseService.createPurchase(purchase);
-  }
-
   @PostMapping("/in-period")
   public List<Purchase> getPurchasesInPeriod(@RequestBody PeriodDTO period) throws IOException {
     return this.purchaseService.getPurchasesInPeriod(period.getStart(), period.getEnd());

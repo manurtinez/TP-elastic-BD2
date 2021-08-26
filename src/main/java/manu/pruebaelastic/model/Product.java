@@ -17,8 +17,6 @@ public class Product {
 
   private Category category;
 
-  // private Set<ProductOnSale> productsOnSale = new HashSet<ProductOnSale>();
-
   /**
    * Constructor vacío necesario
    */
@@ -65,13 +63,5 @@ public class Product {
   public void setCategory(Category category) {
     this.category = category;
   }
-
-  // public void addProductOnSale(ProductOnSale pos) {
-  // this.productsOnSale.add(pos);
-  // }
-
-  // public Set<ProductOnSale> getProductsOnSale() {
-  // return this.productsOnSale;
-  // }
 
 }

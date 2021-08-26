@@ -1,8 +1,5 @@
 package manu.pruebaelastic.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
@@ -38,10 +35,6 @@ public class Category {
    */
   private String name;
 
-  // @OneToMany(fetch = FetchType.LAZY, mappedBy = "category", cascade =
-  // CascadeType.ALL)
-  // private List<Product> products = new ArrayList<Product>();
-
   public String getId() {
     return id;
   }
@@ -53,16 +46,4 @@ public class Category {
   public void setName(String name) {
     this.name = name;
   }
-
-  // public List<Product> getProducts() {
-  // return this.products;
-  // }
-
-  // public void setProducts(List<Product> products) {
-  // this.products = products;
-  // }
-
-  // public void addProduct(Product prod) {
-  // this.products.add(prod);
-  // }
 }
