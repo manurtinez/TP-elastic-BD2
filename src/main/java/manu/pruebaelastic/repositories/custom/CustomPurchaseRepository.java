@@ -1,4 +1,4 @@
-package manu.pruebaelastic.services;
+package manu.pruebaelastic.repositories.custom;
 
 import java.io.IOException;
 import java.util.Date;
@@ -6,10 +6,6 @@ import java.util.List;
 
 import manu.pruebaelastic.model.Purchase;
 
-public interface PurchaseService {
-  List<Purchase> getAll();
-
-  Purchase createPurchase(Purchase pur);
-
+public interface CustomPurchaseRepository {
   List<Purchase> getPurchasesInPeriod(Date start, Date end) throws IOException;
 }

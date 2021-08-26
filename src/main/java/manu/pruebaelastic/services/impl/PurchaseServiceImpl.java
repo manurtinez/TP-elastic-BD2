@@ -1,5 +1,7 @@
 package manu.pruebaelastic.services.impl;
 
+import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,11 @@ public class PurchaseServiceImpl implements PurchaseService {
   @Override
   public Purchase createPurchase(Purchase pur) {
     return purchaseRepository.save(pur);
+  }
+
+  @Override
+  public List<Purchase> getPurchasesInPeriod(Date start, Date end) throws IOException {
+    return this.purchaseRepository.getPurchasesInPeriod(start, end);
   }
 
 }
