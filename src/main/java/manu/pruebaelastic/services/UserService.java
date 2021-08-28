@@ -13,6 +13,4 @@ public interface UserService {
     User addUser(User user);
 
     void addPurchaseToUser(User user, Purchase pur);
-
-    // void addArticleToUser(String id, Article article);
 }

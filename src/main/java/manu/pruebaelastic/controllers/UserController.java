@@ -63,4 +63,11 @@ public class UserController {
         User user = userService.findById(userid);
         userService.addPurchaseToUser(user, createdPurchase);
     }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/{userid}/purchases")
+    public List<Purchase> getAllPurchasesMadeByUser(@PathVariable String userid) {
+        User user = userService.findById(userid);
+        return user.getPurchases();
+    }
 }
