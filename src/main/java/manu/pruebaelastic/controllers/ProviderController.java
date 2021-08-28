@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import manu.pruebaelastic.model.Provider;
+import manu.pruebaelastic.model.DTO.ProductOnSaleDTO;
 import manu.pruebaelastic.model.ProductOnSale;
 import manu.pruebaelastic.services.ProviderService;
 import manu.pruebaelastic.services.ProductOnSaleService;
@@ -40,12 +41,12 @@ public class ProviderController {
     public Provider createProvider(@RequestBody Provider provider) {
         return this.providerService.addProvider(provider);
     }
-    
+
     @ResponseStatus(HttpStatus.ACCEPTED)
     @PostMapping("/{providerid}/productsonsale")
-    public void addProductOnSale(@PathVariable String providerid, @RequestBody ProductOnSale productonsale) {
-        
-        ProductOnSale createdProductOnSale = productOnSaleService.addProductOnSale(productonsale);
+    public void addProductOnSale(@PathVariable String providerid, @RequestBody ProductOnSaleDTO productOnSaleDTO) {
+
+        ProductOnSale createdProductOnSale = productOnSaleService.addProductOnSale(productOnSaleDTO);
         Provider provider = providerService.findById(providerid);
         providerService.addProductOnSaleToProvider(provider, createdProductOnSale);
     }

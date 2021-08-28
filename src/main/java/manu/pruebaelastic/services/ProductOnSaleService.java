@@ -3,6 +3,7 @@ package manu.pruebaelastic.services;
 import java.util.List;
 
 import manu.pruebaelastic.model.ProductOnSale;
+import manu.pruebaelastic.model.DTO.ProductOnSaleDTO;
 import manu.pruebaelastic.model.Product;
 
 public interface ProductOnSaleService {
@@ -10,7 +11,8 @@ public interface ProductOnSaleService {
 
   ProductOnSale findById(String id);
 
-  ProductOnSale addProductOnSale(ProductOnSale productOnSale);
+  ProductOnSale addProductOnSale(ProductOnSaleDTO productOnSaleDTO);
 
-  void addProductToProductOnSale(ProductOnSale pos, Product prod);
+  // TODO este metodo no va mas
+  // void addProductToProductOnSale(ProductOnSale pos, Product prod);
 }

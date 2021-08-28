@@ -1,8 +1,6 @@
 package manu.pruebaelastic.model;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -12,17 +10,17 @@ import org.springframework.data.elasticsearch.annotations.Document;
  * producto
  */
 
-@Document(indexName = "productonsaleindex")
+@Document(indexName = "productonsale")
 public class ProductOnSale {
 
   @Id
   private String id;
 
   /**
-   * Id de producto correspondiente
+   * Objeto product dentro de product on sale
    */
 
-  private List<Product> products = new ArrayList<Product>();
+  private Product product;
 
   /**
    * Precio actual del producto
@@ -49,11 +47,11 @@ public class ProductOnSale {
    * Constructor
    * 
    * @param product     El producto correspondiente
-   * @param provider    El provider correspondiente
    * @param price       Precio para el producto
    * @param initialDate Fecha para llevar el historial
    */
-  public ProductOnSale(float price, Date initialDate) {
+  public ProductOnSale(Product product, float price, Date initialDate) {
+    this.setProduct(product);
     this.setPrice(price);
     this.setInitialDate(initialDate);
   }
@@ -86,12 +84,12 @@ public class ProductOnSale {
     this.finalDate = finalDate;
   }
 
-  public void addProduct(Product prod) {
-    this.products.add(prod);
+  public void setProduct(Product prod) {
+    this.product = prod;
   }
 
-  public List<Product> getProducts() {
-    return products;
+  public Product getProduct() {
+    return this.product;
   }
 
 }
