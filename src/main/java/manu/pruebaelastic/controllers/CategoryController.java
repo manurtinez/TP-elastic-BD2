@@ -1,5 +1,6 @@
 package manu.pruebaelastic.controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -33,5 +34,11 @@ public class CategoryController {
   @PostMapping
   public Category createCategory(@RequestBody Category category) {
     return this.categoryService.createOrGetCategory(category);
+  }
+
+  @ResponseStatus(HttpStatus.OK)
+  @GetMapping("/less-products")
+  public Category getCategoryWithLessProducts() throws IOException {
+    return this.categoryService.getCategoryWithLessProducts();
   }
 }
