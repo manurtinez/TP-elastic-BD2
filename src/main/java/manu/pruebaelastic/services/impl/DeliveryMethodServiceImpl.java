@@ -1,5 +1,6 @@
 package manu.pruebaelastic.services.impl;
 
+import java.io.IOException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class DeliveryMethodServiceImpl implements DeliveryMethodService {
   @Autowired
   private DeliveryMethodRepository deliveryMethodRepository;
 
-  DeliveryMethodServiceImpl(DeliveryMethodRepository deliveryMethodRepository) {
+  public DeliveryMethodServiceImpl(DeliveryMethodRepository deliveryMethodRepository) {
     this.deliveryMethodRepository = deliveryMethodRepository;
   }
 
@@ -35,4 +36,9 @@ public class DeliveryMethodServiceImpl implements DeliveryMethodService {
     }
   }
 
+  public DeliveryMethod getMostUsedDeliveryMethod() throws IOException {
+    // El getMostUsedDeliveryMethod devuelve solo el nombre. Se hace un findByName
+    // para devolver el objeto.
+    return deliveryMethodRepository.findByName(deliveryMethodRepository.getMostUsedDeliveryMethod()).get();
+  }
 }
