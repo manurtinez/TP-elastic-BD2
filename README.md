@@ -1,3 +1,5 @@
+Gist de intentos de querys: https://gist.github.com/manurtinez/4447bf6793d13bde6a70878269165e10
+
 ## En este readme se especifica el proceso de desarrollo que fuimos llevando para construir la app y las dificultades encontradas.
 
 El primer paso de todos fue descargar una aplicacion starter de la pagina initialize de spring boot, a forma de tener un punto de partida, con las dependencias ya agregadas (solo necesitamos la de spring data y elasticsearch). Procedimos a levantar el proyecto para ver que minimamente corriera.
