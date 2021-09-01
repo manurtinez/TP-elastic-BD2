@@ -46,6 +46,7 @@ public class User {
    * Constructor vacio necesario
    */
 
+  @Field(type = FieldType.Nested)
   private List<Purchase> purchases = new ArrayList<Purchase>();
 
   public User() {

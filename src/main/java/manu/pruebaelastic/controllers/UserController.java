@@ -1,5 +1,6 @@
 package manu.pruebaelastic.controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -69,5 +70,11 @@ public class UserController {
     public List<Purchase> getAllPurchasesMadeByUser(@PathVariable String userid) {
         User user = userService.findById(userid);
         return user.getPurchases();
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/get-top-n-by-purchases")
+    public List<User> getTopNUsersMorePurchase() throws IOException {
+        return userService.getTopNUsersMorePurchases(3);
     }
 }
