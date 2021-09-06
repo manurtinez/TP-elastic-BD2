@@ -34,3 +34,9 @@ Para solo muy pocas, pudimos dejar que spring data realize la implementacion aut
 Para el resto de las que pudimos hacer, hubo que implementarlas manualmente. Esto se hace creando una clase Repository custom para la entidad, y hacer que la interfaz extienda al mismo.
 Hubo que usar la clase middleware `RestHighLevelClient`, que provee una api de interaccion con elastic search, creando manualmente las queries y condiciones necesarias.
 Para el caso de las queries normales, por ejemplo, de tipo Boolean (documentoxs que cumplan X condicion), resulta relativamente simple. La dificultad se presento cuando habia que hacer `aggregations` (mayoria de casos) ya que se necesitaba sacar estadisticas de los documentos, y algunos de ellos estan anidados, requiriendo una `nested query` para extraer la informacion.
+
+Las siguientes queries quedaron hechas:
+* Category with less products
+* Most used delivery method
+* get purchases in period
+* get top N users by purchase (esta quedo planteada pero tiene bugs)
