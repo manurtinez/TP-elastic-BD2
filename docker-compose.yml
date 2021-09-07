@@ -1,5 +1,20 @@
 version: '2.2'
 services:
+  backend:
+    image: maven:3.6.3-openjdk-11
+    # command: mvn package -Dmaven.surefire.debug="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=*:5005"
+    command: mvn spring-boot:run
+    ports:
+      - 8080:8080
+      - 5005:5005
+    volumes:
+      - .:/usr/src/bd2:rw
+    working_dir: /usr/src/bd2
+    depends_on:
+      - es01
+    networks:
+      - elastic
+
   es01:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.13.3
     container_name: es01
