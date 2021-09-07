@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"quantity\": \"123\",\r\n    \"deliveryMethod\": {\r\n        \"name\": \"aDelivery\",\r\n        \"cost\": \"123\",\r\n        \"startWeight\": \"123\",\r\n        \"endWeight\": \"123\"\r\n    },\r\n    \"paymentMethod\": {\r\n        \"name\": \"aPaymentMethod\",\r\n        \"paymentType\": \"OnDeliveryPayment\",\r\n        \"promisedAmount\": \"123\",\r\n        \"brand\": \"\",\r\n        \"number\": \"\",\r\n        \"cvv\": \"\",\r\n        \"owner\": \"\",\r\n        \"expiry\": \"\"\r\n    },\r\n    \"address\": \"123\",\r\n    \"coordX\": \"1\",\r\n    \"coordY\": \"2\",\r\n    \"dateOfPurchase\": \"1970-01-01T00:00:00.123+00:00\"\r\n}",
+							"raw": "{\r\n    \"quantity\": \"123\",\r\n    \"deliveryMethod\": {\r\n        \"name\": \"aDelivery2\",\r\n        \"cost\": \"123\",\r\n        \"startWeight\": \"123\",\r\n        \"endWeight\": \"123\"\r\n    },\r\n    \"paymentMethod\": {\r\n        \"name\": \"aPaymentMethod4\",\r\n        \"paymentType\": \"OnDeliveryPayment\",\r\n        \"promisedAmount\": \"123\",\r\n        \"brand\": \"visa\",\r\n        \"number\": \"123\",\r\n        \"cvv\": \"123\",\r\n        \"owner\": \"manu\",\r\n        \"expiry\": \"2030-12-12\"\r\n    },\r\n    \"address\": \"123\",\r\n    \"coordX\": \"1\",\r\n    \"coordY\": \"2\",\r\n    \"dateOfPurchase\": \"2025-01-01T00:00:00.123+00:00\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -23,14 +23,34 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/user/HPWuLXsB5TyEUlVv9yDe/purchases",
+							"raw": "localhost:8080/user/CXcOonsBYbx2qdQKUOcN/purchases",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"user",
-								"HPWuLXsB5TyEUlVv9yDe",
+								"CXcOonsBYbx2qdQKUOcN",
+								"purchases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get purchases of user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/gBGCiHsBYkWFeTtr1yZU/purchases",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"gBGCiHsBYkWFeTtr1yZU",
 								"purchases"
 							]
 						}
@@ -49,7 +69,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"manu@manu.com\",\r\n    \"fullName\": \"manuelito3\",\r\n    \"password\": \"123\",\r\n    \"dayOfBirth\": \"1970-01-01\"\r\n}",
+							"raw": "{\r\n    \"email\": \"manu@manu.com\",\r\n    \"fullName\": \"manuelito2\",\r\n    \"password\": \"123\",\r\n    \"dayOfBirth\": \"1970-01-01\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -99,7 +119,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"aCategory\"\r\n}",
+							"raw": "{\r\n    \"name\": \"aCategory2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -336,6 +356,33 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "add product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"aProduct1\",\r\n    \"weight\": \"123\",\r\n    \"category\": {\r\n        \"name\": \"testCategory\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -398,7 +445,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"price\": \"123\",\r\n    \"initialDate\": \"2020-10-10\"\r\n}",
+							"raw": "{\r\n    \"price\": \"123\",\r\n    \"initialDate\": \"2020-10-10\",\r\n    \"product\": \"ihHHinsBYkWFeTtr-ibk\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -406,15 +453,105 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/provider/e_BEYHsBKPoFGdhFTdIC/productsonsale",
+							"raw": "localhost:8080/provider/hBG7insBYkWFeTtrOCZG/productsonsale",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"provider",
-								"e_BEYHsBKPoFGdhFTdIC",
+								"hBG7insBYkWFeTtrOCZG",
 								"productsonsale"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "queries",
+			"item": [
+				{
+					"name": "category with less products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/category/less-products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"less-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "most used delivery",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/delivery/most-used",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"delivery",
+								"most-used"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get purchases in period",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"start\": \"2019-02-01T00:00:00.123+00:00\",\r\n    \"end\": \"2023-03-01T00:00:00.123+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/purchase/in-period",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"purchase",
+								"in-period"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get top N users by purchase (NO FUNCIONA)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/get-top-n-by-purchases",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"get-top-n-by-purchases"
 							]
 						}
 					},
