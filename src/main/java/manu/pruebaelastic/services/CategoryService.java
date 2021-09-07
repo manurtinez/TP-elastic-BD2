@@ -8,6 +8,8 @@ import manu.pruebaelastic.model.Category;
 public interface CategoryService {
   List<Category> findAll();
 
+  Category findByName(String name);
+
   Category createOrGetCategory(Category cat);
 
   Category getCategoryWithLessProducts() throws IOException;

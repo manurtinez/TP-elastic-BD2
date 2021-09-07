@@ -1,7 +1,9 @@
 package manu.pruebaelastic.services.impl;
 
+import java.io.IOException;
 import java.util.List;
 
+import manu.pruebaelastic.model.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +37,11 @@ public class ProductServiceImpl implements ProductService {
     prod.setCategory(categoryService.createOrGetCategory(prod.getCategory()));
 
     return productRepository.save(prod);
+  }
+
+  @Override
+  public List<Product> getProductsForCategory(Category cat) throws IOException {
+    return productRepository.getProductsForCategory(cat);
   }
 
 }

@@ -35,6 +35,12 @@ public class CategoryServiceImpl implements CategoryService {
   }
 
   @Override
+  public Category findByName(String id) {
+    return categoryRepository.findByName(id).get();
+  }
+
+
+  @Override
   public Category createOrGetCategory(Category cat) {
     Optional<Category> retrievedCategory = categoryRepository.findByName(cat.getName());
     if (!retrievedCategory.isPresent()) {
