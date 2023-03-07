@@ -36,7 +36,7 @@ Hubo que usar la clase middleware `RestHighLevelClient`, que provee una api de i
 Para el caso de las queries normales, por ejemplo, de tipo Boolean (documentoxs que cumplan X condicion), resulta relativamente simple. La dificultad se presento cuando habia que hacer `aggregations` (mayoria de casos) ya que se necesitaba sacar estadisticas de los documentos, y algunos de ellos estan anidados, requiriendo una `nested query` para extraer la informacion.
 
 Las siguientes queries quedaron hechas:
-* Category with less products
-* Most used delivery method
-* get purchases in period
+* Category with less products https://github.com/manurtinez/TP-elastic-BD2/blob/d8b3fdc6c4a92c9428dc2b8ebf615ae6599b6c77/src/main/java/manu/pruebaelastic/repositories/custom/CustomCategoryRepositoryImpl.java#L26-L51
+* Most used delivery method https://github.com/manurtinez/TP-elastic-BD2/blob/d8b3fdc6c4a92c9428dc2b8ebf615ae6599b6c77/src/main/java/manu/pruebaelastic/repositories/custom/CustomDeliveryMethodRepositoryImpl.java#L26-L48
+* get purchases in period https://github.com/manurtinez/TP-elastic-BD2/blob/d8b3fdc6c4a92c9428dc2b8ebf615ae6599b6c77/src/main/java/manu/pruebaelastic/repositories/custom/CustomPurchaseRepositoryImpl.java#L36-L59
 * get top N users by purchase (esta quedo planteada pero tiene bugs)
